@@ -78,6 +78,12 @@ For example, to train COCO object detection with dla on 2 GPUs, run
 python main.py ctdet --exp_id coco_dla --batch_size 32 --master_batch 15 --lr 1.25e-4  --gpus 0,1
 ~~~
 
+``` shell
+python src/main.py ctdet --exp_id coco_dla --batch_size 16 --master_batch 15 --lr 0.625e-4  --gpus 0
+
+
+```
+
 The default learning rate is `1.25e-4` for batch size `32` (on 2 GPUs).
 By default, pytorch evenly splits the total batch size to each GPUs.
 `--master_batch` allows using different batchsize for the master GPU, which usually costs more memory than other GPUs.
