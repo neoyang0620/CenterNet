@@ -7,7 +7,7 @@ After install Anaconda:
 0. [Optional but recommended] create a new conda environment. 
 
     ~~~
-    conda create --name CenterNet python=3.6
+    conda create --prefix ./CenterNet python=3.7 -y
     ~~~
     And activate the environment.
     
@@ -18,7 +18,7 @@ After install Anaconda:
 1. Install pytorch0.4.1:
 
     ~~~
-    conda install pytorch=0.4.1 torchvision -c pytorch
+    conda install pytorch torchvision -c pytorch
     ~~~
     
     And disable cudnn batch normalization(Due to [this issue](https://github.com/xingyizhou/pytorch-pose-hg-3d/issues/16)).
@@ -62,6 +62,10 @@ After install Anaconda:
 
     ~~~
     cd $CenterNet_ROOT/src/lib/models/networks/DCNv2
+    cd ..
+    rm -rf DCNv2
+    git clone https://github.com/CharlesShang/DCNv2.git
+    cd DCNv2
     ./make.sh
     ~~~
 6. [Optional, only required if you are using extremenet or multi-scale testing] Compile NMS if your want to use multi-scale testing or test ExtremeNet.
