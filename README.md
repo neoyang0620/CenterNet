@@ -1,3 +1,21 @@
+ref: https://blog.csdn.net/weixin_41765699/article/details/100118353
+# Training
+```
+cd src
+python main.py
+python main.py ctdet --exp_id coco_dla --batch_size 16 --master_batch 1 --lr 0.625e-4  --gpus 0
+```
+
+# Demo
+
+# Validation
+```
+python test.py --exp_id coco_dla --not_prefetch_test ctdet --load_model ../exp/ctdet/coco_dla/model_best.pth
+```
+
+
+
+
 # Objects as Points
 Object detection, 3D detection, and pose estimation using center point detection:
 ![](readme/fig2.png)
